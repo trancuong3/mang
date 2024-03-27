@@ -1,36 +1,28 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset=utf-8 />
-    <title>JS Bin</title>
-    <style>
-
-    </style>
+    <meta charset="UTF-8">
+    <title>tong</title>
 </head>
-
 <body>
-<input type="text" id="txtValue"/>
-<input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"/>
-<input type="button" id="btnDisplay" value="Display" onclick="display_array();"/>
-<div id="result"></div>
+<p id="result"></p>
 </body>
 <script>
-    let x = 0;
-    let array = Array();
-    function add_element_to_array() {
-        array[x] = document.getElementById("txtValue").value;
-        alert("Element: " + array[x] + " Added at index " + x);
-        x++;
-       
-    }
-    function display_array() {
-        let e = "<hr/>";
-        for (let i = 0; i < array.length; i++) {
-            e += "Element " + i + " = " + array[i] + "<br/>";
+    let numbers=[
+        [12,4,5,9],
+        [2,5,3,2],
+        [1,2,1,8],
+        [3,5,6,8]
+    ]
+    let sum=0;
+    for(let i=0; i<numbers.length; i++) {
+        for(let j=0; j<numbers[i].length; j++) {
+            if (i === j) {
+                sum += numbers[i][j];
+            }
         }
-        document.getElementById("result").innerHTML = e;
     }
-</script>
 
+    document.getElementById("result").innerHTML = sum;
+</script>
 </html>
